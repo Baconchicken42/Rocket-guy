@@ -38,7 +38,7 @@ public class HeroKnight : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
@@ -63,14 +63,18 @@ public class HeroKnight : MonoBehaviour {
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            Debug.Log("Right");
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
             m_facingDirection = 1;
+            Debug.Log("right1");
         }
             
         else if (inputX < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            Debug.Log("left");
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
             m_facingDirection = -1;
+            Debug.Log("left1");
         }
 
         //Jump

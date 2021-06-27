@@ -53,11 +53,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CamController.cs" />
+     <Compile Include="Assets\Free Pixel Army\Scripts\BoredButton.cs" />
+     <Compile Include="Assets\Free Pixel Army\Scripts\IdleButton.cs" />
+     <Compile Include="Assets\Free Pixel Army\Scripts\WalkButton.cs" />
+     <Compile Include="Assets\Free Pixel Army\Scripts\YawnButton.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
      <None Include="Assets\Art\Nature_pixel_art_assets\pixel_snapping_README.txt" />
+     <None Include="Assets\Free Pixel Army\Documentation\Documentation.txt" />
      <None Include="Assets\Hero Knight - Pixel Art\ColorSwap\Sprites-ColorSwap.shader" />
      <None Include="Assets\Art\Medieval_pixel_art_asset_FREE\pixel_snapping_README.txt" />
  <Reference Include="UnityEngine.Purchasing">
