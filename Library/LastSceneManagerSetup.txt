@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/DemoScene1.unity
+- path: Assets/Scenes/FungusTest.unity
   isLoaded: 1
   isActive: 1
