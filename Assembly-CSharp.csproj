@@ -712,6 +712,7 @@
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+     <Compile Include="Assets\Scripts\EnemyController.cs" />
      <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />
      <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\LineBreaking Leading Characters.txt" />
