@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D boxCol;
+    private Animator m_animator;
+    private SpriteRenderer spriteRend;
     private float timeSinceFlip;
 
     public float walkTime = 5;
@@ -17,8 +19,12 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCol = GetComponent<BoxCollider2D>();
+        m_animator = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
 
         rb.velocity = new Vector2(walkSpeed * walkDirection, rb.velocity.y);
+
+        m_animator.SetInteger("Animate", 2);
     }
 
     void move()
@@ -28,6 +34,12 @@ public class EnemyController : MonoBehaviour
             walkDirection *= -1;
             timeSinceFlip = 0f;
         }
+
+        if (walkDirection < 0)
+            spriteRend.flipX = true;
+        else
+            spriteRend.flipX = false;
+        
         rb.velocity = new Vector2(walkSpeed * walkDirection, rb.velocity.y);
     }
 

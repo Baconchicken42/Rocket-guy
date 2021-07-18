@@ -11,6 +11,7 @@ public class HeroKnight : MonoBehaviour {
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
+    private SpriteRenderer      m_spriteRenderer;
     private Sensor_HeroKnight   m_groundSensor;
     private Sensor_HeroKnight   m_wallSensorR1;
     private Sensor_HeroKnight   m_wallSensorR2;
@@ -30,6 +31,7 @@ public class HeroKnight : MonoBehaviour {
     {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR1 = transform.Find("WallSensor_R1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
@@ -64,7 +66,7 @@ public class HeroKnight : MonoBehaviour {
         if (inputX > 0)
         {
             Debug.Log("Right");
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            m_spriteRenderer.flipX = false;
             m_facingDirection = 1;
             Debug.Log("right1");
         }
@@ -72,7 +74,7 @@ public class HeroKnight : MonoBehaviour {
         else if (inputX < 0)
         {
             Debug.Log("left");
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            m_spriteRenderer.flipX = true;
             m_facingDirection = -1;
             Debug.Log("left1");
         }
