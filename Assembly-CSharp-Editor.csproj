@@ -760,8 +760,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{A50F1452-1A88-883F-7D36-05F68DA3D4E7}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="com.ben-w.erp.csproj">
-      <Project>{3B76383F-E0D9-A903-258E-35158A8A8B5C}</Project>      <Name>com.ben-w.erp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
