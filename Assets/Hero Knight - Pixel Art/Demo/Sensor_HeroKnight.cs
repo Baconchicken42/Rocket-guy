@@ -7,6 +7,8 @@ public class Sensor_HeroKnight : MonoBehaviour {
 
     private float m_DisableTimer;
 
+    private GameObject target;
+
     private void OnEnable()
     {
         m_ColCount = 0;
@@ -19,9 +21,15 @@ public class Sensor_HeroKnight : MonoBehaviour {
         return m_ColCount > 0;
     }
 
+    public GameObject getTarget()
+    {
+        return target;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         m_ColCount++;
+        target = other.gameObject;
     }
 
     void OnTriggerExit2D(Collider2D other)

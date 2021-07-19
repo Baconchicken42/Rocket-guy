@@ -55,9 +55,12 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSinceFlip += Time.deltaTime;
+        if (this.gameObject != null)
+        {
+            timeSinceFlip += Time.deltaTime;
 
-        move();
+            move();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

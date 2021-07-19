@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 489383486434022228}
   m_Layer: 0
   m_Name: Helmet_0
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +145,8 @@ MonoBehaviour:
   walkTime: 2
   walkSpeed: 5
   walkDirection: -1
+  respawn: {fileID: 0}
+  player: {fileID: 0}
 --- !u!95 &489383486434022228
 Animator:
   serializedVersion: 3

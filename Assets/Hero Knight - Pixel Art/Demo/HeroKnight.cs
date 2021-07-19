@@ -17,11 +17,15 @@ public class HeroKnight : MonoBehaviour {
     private Sensor_HeroKnight   m_wallSensorR2;
     private Sensor_HeroKnight   m_wallSensorL1;
     private Sensor_HeroKnight   m_wallSensorL2;
+    private Sensor_HeroKnight   m_AttackSensor_R;
+    private Sensor_HeroKnight   m_AttackSensor_L;
     private bool                m_grounded = false;
     private bool                m_rolling = false;
     private int                 m_facingDirection = 1;
     private int                 m_currentAttack = 0;
     private float               m_timeSinceAttack = 0.0f;
+    private float               m_timeSinceAttackStarted = 0.0f;
+    private bool                m_attacking = false;
     private float               m_delayToIdle = 0.0f;
     private bool                m_rocketing = false;
 
@@ -37,6 +41,8 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
+        m_AttackSensor_L = transform.Find("AttackSensor_L").GetComponent<Sensor_HeroKnight>();
+        m_AttackSensor_R = transform.Find("AttackSensor_R").GetComponent<Sensor_HeroKnight>();
     }
 
     // Update is called once per frame
@@ -44,6 +50,7 @@ public class HeroKnight : MonoBehaviour {
     {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
+        
 
         //Check if character just landed on the ground
         if (!m_grounded && m_groundSensor.State())
@@ -65,18 +72,16 @@ public class HeroKnight : MonoBehaviour {
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
         {
-            //Debug.Log("Right");
-            m_spriteRenderer.flipX = false;
+            // m_spriteRenderer.flipX = false;
+            this.gameObject.transform.localScale = new Vector3(1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
             m_facingDirection = 1;
-            //Debug.Log("right1");
         }
             
         else if (inputX < 0)
         {
-            //Debug.Log("left");
-            m_spriteRenderer.flipX = true;
+            // m_spriteRenderer.flipX = true;
+            this.gameObject.transform.localScale = new Vector3(-1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
             m_facingDirection = -1;
-            //Debug.Log("left1");
         }
 
         //Jump
@@ -131,9 +136,37 @@ public class HeroKnight : MonoBehaviour {
         else if (Input.GetKeyDown("q") && !m_rolling)
             m_animator.SetTrigger("Hurt");
 
+        //check if attack is ongoing
+        if (m_attacking)
+        {
+            m_timeSinceAttackStarted += Time.deltaTime;
+
+            //check for a hit, hopefully
+            // if (m_facingDirection < 0 && m_AttackSensor_L.getTarget().tag == "enemy")
+            // {
+            //     Debug.Log("Hit something on left side!");
+            //     Destroy(m_AttackSensor_L.getTarget());
+            //     Debug.Log("Left side target should be destroyed now");
+            // }
+            
+            if (m_facingDirection > 0 && m_AttackSensor_R.getTarget().tag == "enemy")
+            {
+                Debug.Log("Hit something on right side!");
+                Destroy(m_AttackSensor_R.getTarget());
+                Debug.Log("Right side target should be destroyed now");
+            }
+
+            if (m_timeSinceAttackStarted > (5f / 60))
+            {
+                m_attacking = false;
+                m_timeSinceAttackStarted = 0f;
+            }
+        }
+
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
+            m_attacking = true;
             m_currentAttack++;
 
             // Loop back to one after third attack
@@ -147,9 +180,13 @@ public class HeroKnight : MonoBehaviour {
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
             m_animator.SetTrigger("Attack" + m_currentAttack);
 
+            
+
             // Reset timer
             m_timeSinceAttack = 0.0f;
         }
+
+        
 
         // Block
         else if (Input.GetMouseButtonDown(1) && !m_rolling)
