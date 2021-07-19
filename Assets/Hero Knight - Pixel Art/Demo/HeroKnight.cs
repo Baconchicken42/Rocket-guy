@@ -65,18 +65,18 @@ public class HeroKnight : MonoBehaviour {
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
         {
-            Debug.Log("Right");
+            //Debug.Log("Right");
             m_spriteRenderer.flipX = false;
             m_facingDirection = 1;
-            Debug.Log("right1");
+            //Debug.Log("right1");
         }
             
         else if (inputX < 0)
         {
-            Debug.Log("left");
+            //Debug.Log("left");
             m_spriteRenderer.flipX = true;
             m_facingDirection = -1;
-            Debug.Log("left1");
+            //Debug.Log("left1");
         }
 
         //Jump

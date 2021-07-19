@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour
     public int walkSpeed = 5;
     public int walkDirection = -1;
 
+    public GameObject respawn;
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,11 +46,26 @@ public class EnemyController : MonoBehaviour
         rb.velocity = new Vector2(walkSpeed * walkDirection, rb.velocity.y);
     }
 
+    void hurtPlayer()
+    {
+        player.transform.position = new Vector2(respawn.transform.position.x, respawn.transform.position.y);
+        Debug.Log("KILLED!!!");
+    }
+
     // Update is called once per frame
     void Update()
     {
         timeSinceFlip += Time.deltaTime;
 
         move();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collision!");
+        if (collision.gameObject == player)
+        {
+            hurtPlayer();
+        }
     }
 }
