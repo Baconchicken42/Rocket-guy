@@ -712,6 +712,7 @@
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\DiamondController.cs" />
      <Compile Include="Assets\Scripts\dumbCutsceneController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\SpikesController.cs" />
@@ -723,6 +724,7 @@
      <None Include="Assets\FungusExamples\FirstPerson\Visuals\Google Poly\Button\CC-BY.txt" />
      <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\Fungus\Fonts\Exo2\OFL.txt" />
+     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH Sprite Icon Outline Color.shader" />
      <None Include="Assets\Art\Nature_pixel_art_assets\pixel_snapping_README.txt" />
      <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\Fungus\Docs\LICENSE.txt" />
@@ -759,6 +761,7 @@
      <None Include="Assets\Fungus\Thirdparty\FungusLua\Resources\Lua\fungus.txt" />
      <None Include="Assets\FungusExamples\FirstPerson\Visuals\Google Poly\Door\CC-BY.txt" />
      <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />
      <None Include="Assets\Fungus\Docs\CHANGELOG.txt" />
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/darth/Documents/Unity/Rocket-guy/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
