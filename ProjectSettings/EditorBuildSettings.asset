@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/intro_fungus.unity
+    guid: feec8637769732d4d89dfda338585307
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: b557e975ce9e47841935fd3d9d19e61b
   m_configObjects: {}
