@@ -123,18 +123,18 @@ public class HeroKnight : MonoBehaviour {
 
         // -- Handle Animations --
         //Wall Slide
-        m_animator.SetBool("WallSlide", (m_wallSensorR1.State() && m_wallSensorR2.State()) || (m_wallSensorL1.State() && m_wallSensorL2.State()));
+        //m_animator.SetBool("WallSlide", (m_wallSensorR1.State() && m_wallSensorR2.State()) || (m_wallSensorL1.State() && m_wallSensorL2.State()));
 
         //Death
-        if (Input.GetKeyDown("e") && !m_rolling)
-        {
-            m_animator.SetBool("noBlood", m_noBlood);
-            m_animator.SetTrigger("Death");
-        }
+        // if (Input.GetKeyDown("e") && !m_rolling)
+        // {
+        //     m_animator.SetBool("noBlood", m_noBlood);
+        //     m_animator.SetTrigger("Death");
+        // }
             
         //Hurt
-        else if (Input.GetKeyDown("q") && !m_rolling)
-            m_animator.SetTrigger("Hurt");
+        // else if (Input.GetKeyDown("q") && !m_rolling)
+        //     m_animator.SetTrigger("Hurt");
 
         //check if attack is ongoing
         if (m_attacking)
@@ -189,22 +189,22 @@ public class HeroKnight : MonoBehaviour {
         
 
         // Block
-        else if (Input.GetMouseButtonDown(1) && !m_rolling)
-        {
-            m_animator.SetTrigger("Block");
-            m_animator.SetBool("IdleBlock", true);
-        }
+        // else if (Input.GetMouseButtonDown(1) && !m_rolling)
+        // {
+        //     m_animator.SetTrigger("Block");
+        //     m_animator.SetBool("IdleBlock", true);
+        // }
 
-        else if (Input.GetMouseButtonUp(1))
-            m_animator.SetBool("IdleBlock", false);
+        // else if (Input.GetMouseButtonUp(1))
+        //     m_animator.SetBool("IdleBlock", false);
 
-        // Roll
-        else if (Input.GetKeyDown("left shift") && !m_rolling)
-        {
-            m_rolling = true;
-            m_animator.SetTrigger("Roll");
-            m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
-        }
+        // // Roll
+        // else if (Input.GetKeyDown("left shift") && !m_rolling)
+        // {
+        //     m_rolling = true;
+        //     m_animator.SetTrigger("Roll");
+        //     m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
+        // }
             
 
         //Run
