@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CamController.cs" />
      <Compile Include="Assets\Free Pixel Army\Scripts\BoredButton.cs" />
      <Compile Include="Assets\Free Pixel Army\Scripts\IdleButton.cs" />
      <Compile Include="Assets\Free Pixel Army\Scripts\WalkButton.cs" />
@@ -712,6 +711,8 @@
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\dumbCutsceneController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\SpikesController.cs" />
      <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />
