@@ -1,5 +1,5 @@
 # Rocket-guy
-extremely basic demo of a game concept where the main movement ability is rocketing towards enemies. Hold space and a direction to rocket forward!
+Demo / First level / Vertical slice of a game concept where the main movement ability is rocketing towards enemies. Hold space and a direction to rocket forward!
 
 NEW STUFF 7/18/2021:
 --Added enemy that moves back and forth and kills the player (can be seen in EnemyTest scene)
